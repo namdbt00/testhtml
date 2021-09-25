@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>CSS Template</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* Style the header */
+        header {
+            background-color: rgb(134, 221, 236);
+            padding: 30px;
+            text-align: center;
+            font-size: 35px;
+            color: white;
+        }
+
+        /* Create two columns/boxes that floats next to each other */
+        nav {
+            float: left;
+            width: 20%;
+            height: 600px;
+            /* only for demonstration, should be removed */
+            background: rgb(190, 176, 176);
+            padding: 20px;
+        }
+
+        /* Style the list inside the menu */
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li a {
+            font-family: bold;
+            font-size: 25pt;
+        }
+
+        div.body {
+            float: left;
+            padding: 50px;
+            width: 80%;
+            background-color: #abe4cc;
+            height: 600px;
+            display: flex;
+            /* only for demonstration, should be removed */
+        }
+
+        /* Clear floats after the columns */
+        section::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* Style the footer */
+        footer {
+            display: flex;
+            background-color: rgb(134, 221, 236);
+            padding: 10px;
+            color: white;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        /* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+        @media (max-width: 600px) {
+
+            nav,
+            article {
+                width: 100%;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v12.0"
+        nonce="Lr5pb1HI"></script>
+
+    <header>
+        <h2>Đăng ký thông tin</h2>
+    </header>
+
+    <section>
+        <nav>
+            <ul>
+                <li><a href="#">Đăng nhập</a></li>
+                <li><a href="#">Đăng ký</a></li>
+                <li><a href="#">Quên mật khẩu</a></li>
+            </ul>
+        </nav>
+
+        <!-- <article>
+    <h1>London</h1>
+    <p>London is the capital city of England. It is the most populous city in the  United Kingdom, with a metropolitan area of over 13 million inhabitants.</p>
+    <p>Standing on the River Thames, London has been a major settlement for two millennia, its history going back to its founding by the Romans, who named it Londinium.</p>
+  </article> -->
+        <div class="body">
+            <div class="main" style="padding-right: 500px;">
+                <div class="username">
+                    <label for="username">User name:</label>
+                    <input type="text" id="username"><br></br>
+                </div>
+                <div class="password">
+                    <label for="password" style="padding-right: 8px;">Password:</label>
+                    <input type="password" id="password"><br></br>
+                </div>
+
+                <div class="email">
+                    <label for="email" style="padding-right: 38px;">Email:</label>
+                    <input type="email" id="email"><br></br>
+                </div>
+
+                <div class="birthday">
+                    <label for="birthday" style="padding-right: 8px;">Ngày sinh:</label>
+                    <input type="date" id="birthday"><br></br>
+                </div>
+
+                <div class="gender">
+                    <label for="gender" style="padding-right:13pt">Giới tính:</label>
+                    <label for="Nam">Nam:</label>
+                    <input type="radio" id="gender" value="Nam">
+                    <label for="Nu">Nữ:</label>
+                    <input type="radio" id="gender" value="Nữ">
+                    <br></br>
+                </div>
+
+                <div class="province">
+                    <label for="province" style="padding-right:13pt">Tỉnh/Thành phố:</label>
+                    <select name="province" id="provinces">
+                        <option value="Other">Other</option>
+                        <option value="Hanoi">Hà Nội</option>
+                        <option value="Namdinh">Nam Định</option>
+                        <option value="Hochiminh">Tp.Hồ Chí Minh</option>
+                    </select>
+                    <br></br>
+                </div>
+
+                <div class="hobby">
+                    <label for="hobby" style="padding-right:15pt">Sở thích:</label>
+                    <label for="hobby1"> Thể thao:</label>
+                    <input type="checkbox" id="hobby1" name="hobby1" value="sport">
+                    <label for="hobby2">Nghe nhạc:</label>
+                    <input type="checkbox" id="hobby2" name="hobby2" value="music">
+                    <label for="hobby3">Mua sắm:</label>
+                    <input type="checkbox" id="hobby3" name="hobby3" value="shopping">
+                    <label for="hobby4">Du lịch:</label>
+                    <input type="checkbox" id="hobby4" name="hobby4" value="traveling">
+                    <br></br>
+                </div>
+
+                <div class="desc">
+                    <label for="desc">Mô tả bản thân:</label>
+                    <br></br>
+                    <textarea id="desc" name="desc" rows="4" cols="50"></textarea>
+                    <br></br>
+                </div>
+
+                <div class="button">
+                    <input type="submit" value="Submit">
+                    <input type="reset" value="Reset">
+                </div>
+
+            </div>
+            <div class="utils">
+                <div class="mapouter">
+                    <div class="gmap_canvas"><iframe class="gmap_iframe" frameborder="0" scrolling="no" marginheight="0"
+                            marginwidth="0"
+                            src="https://maps.google.com/maps?width=300&amp;height=300&amp;hl=en&amp;q=Hà Nộ&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe><a
+                            href="https://www.fnfgo.com/">FNF Online</a></div>
+                    <style>
+                        .mapouter {
+                            position: relative;
+                            text-align: right;
+                            width: 300px;
+                            height: 300px;
+                        }
+
+                        .gmap_canvas {
+                            overflow: hidden;
+                            background: none !important;
+                            width: 300px;
+                            height: 300px;
+                        }
+
+                        .gmap_iframe {
+                            width: 300px !important;
+                            height: 300px !important;
+                        }
+                    </style>
+                </div>
+                <br></br>
+
+                <div class="fb-page" data-href="https://www.facebook.com/fbbongda24h" data-tabs="300" data-width=""
+                    data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false"
+                    data-show-facepile="true">
+                    <blockquote cite="https://www.facebook.com/fbbongda24h" class="fb-xfbml-parse-ignore"><a
+                            href="https://www.facebook.com/fbbongda24h">Bóng đá 24h</a></blockquote>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <footer>
+        <p style="padding-right: 1300px; padding-left: 80px;">HTML practice 25/09/2021</p>
+        <p>Đỗ Bùi Thành Nam - B18DCCN420</p>
+    </footer>
+
+</body>
+
+</html>
